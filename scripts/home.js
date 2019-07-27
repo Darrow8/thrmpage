@@ -1054,7 +1054,7 @@ db.collection('memeInfo')
             db.collection("memeInfo").doc(doc.id).delete().then(function() {
                 //alert('here2')
                 db.collection("universalId").doc("Deleted").update({
-                    deleted: String(deleteId)
+                    deleted: db.FieldValue.arrayUnion(deleteId)
                 }).then(function(){
                     Swal.fire({
                       title: 'Successfully Deleted',
