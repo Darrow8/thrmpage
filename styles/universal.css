@@ -1,0 +1,35 @@
+/*Universal body & button stuff for all of the pages — overridable by using an id or a class*/
+body{
+	background-color: #000;
+	color: white;
+	font-family: Helvetica, Arial, sans-serif;
+	/*vertical-align: center;*/
+}
+button{
+  background-color: #3d90c4;
+  color: black;
+   padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+}
+
+#profPic{
+  object-fit: contain;
+  vertical-align: top;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 100px;
+}

@@ -1,0 +1,464 @@
+/* background is #000, header is #1E1E1E, button is #3d90c4, logo is #3d90c4*/
+body{overflow: auto;}
+.topButton {
+  background-color: #3d90c4;
+  border: none;
+  color: black;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /*padding-top: 30px;*/
+  /*margin-top: 20px;*/
+  /*height:200px;*/
+  float:right;
+  margin-right: 50px;
+  margin-top: 9px;
+}
+#header{
+  	/*margin-top: 30px;*/
+	/*float: center;*/
+	background-color: #1E1E1E;
+
+}
+#search{
+	display: inline;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  float: center;
+	border: 1px solid transparent;
+    border-radius: 3px;
+}
+.searchBar{
+	background-color: #1E1E1E;
+	height: 25px;
+	margin-top: 1.5%;
+	vertical-align: top;
+	text-decoration-line: #1E1E1E;
+	border: 1px solid transparent;
+    border-radius: 3px;
+    color: #cacaca;
+    border-left: 0px;
+}
+#searchInput{
+  width: 42.5%;
+}
+#searchButton{
+	border-left: 0px;
+	height: 27px;
+	background-color: #3d90c4;
+	color:black;
+}
+
+
+#loginContent{
+	color: white;
+	font-family: Helvetica, Arial, sans-serif;
+	display: inline-block;
+	background-color: grey;
+	 position: absolute;
+	 margin: auto;
+	 top: 0;
+	 right: 0;
+	 bottom: 200px;
+	 left: 0;
+	 width: 150px;
+	 height: 250px;
+
+}
+#email{
+	display: block;
+}
+#badgeWrapper{
+      /*background-color: pink;*/
+  display: inline-block;
+  transform: translate(25%, 0);
+}
+#pword{
+	display: block;
+	margin-bottom: 20px;
+}
+.tellers{
+	display:inline-block;
+	font-size: 15px;
+	margin-top: 10px;
+	right: 50px;
+}
+#img{
+  /*width: 0.05%;*/
+  width:80%;
+  object-fit: contain;
+/*  vertical-align: top;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 100px;*/
+}
+.memeInDiv{
+	height: 150px;
+	width: auto;
+
+}
+#favMeme{
+}
+#badgeName{
+     display: inline;
+    padding: 3px 6px;   
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #1E1E1E;
+  margin: auto;
+  padding: 20px;
+  border: 1px transparent #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*text from the modal*/
+#modalText{
+	color: white;
+}
+
+
+
+
+
+
+/* The Modal (background) */
+#mobileSearchInput {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+#mobileDisplay {
+  background-color: #1E1E1E;
+  margin: auto;
+  padding: 20px;
+  border: 1px transparent #888;
+  width: 80%;
+}
+
+/* The Close Button */
+#closeMobileSearch{
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#closeMobileSearch:hover,
+#closeMobileSearch:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#favMemeDiv{
+	float: right;
+	margin-top: 2%;
+	margin-right: 10%;
+	background-color: #2d333d;
+	text-align: center;
+	cursor: pointer;
+}
+
+#rankGraphInformationBubble{
+  color: white;
+
+}
+
+#rankQ{
+  display: inline;
+  color: black;
+  text-decoration: none;
+}
+
+#rank{
+  display: inline;
+}
+
+#joinedDate{
+  display: block;
+}
+
+#streakNum{
+  display: block;
+}
+
+table, td{
+  color: white;
+  border: 1px solid white;
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.popup .popupinfo::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+
+.popup #popupinfo {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 75%;
+  padding: 10px;
+  height: auto; /* Should be removed. Only for demonstration */
+}
+.homepageRow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#profPic{
+    margin-right:10%;
+}
+
+#profileContent{
+  width: 25%;
+}
+#profileInformation{
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius:15px;
+  text-align: center;
+  background-color: #1E1E1E;
+  padding: 10px;
+}
+.follow{
+  display: inline;
+  padding: 5px;
+}
+
+#firstTimeOffer{
+  padding: 10px;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #1E1E1E;
+}
+#yourCode{
+  background-color: grey;
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  color: white;
+  width: 30%;
+}
+#friendCode{
+  width: 30%;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: grey;
+  border: 1px solid transparent;
+  color: white;
+}
+#copytxt{
+    background-color:black;
+    border: 0px;
+}
+#mobileSearch{
+    display:none;
+}
+#badge{
+    display:none;
+    background-color:#4287f5;
+    padding: 5px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-right: 0.1vh;
+    margin-left: 0.1vh;
+}
+@media screen and (max-width: 481px){
+    .mobileSearchDisplayBox{
+    	background-color: #1E1E1E;
+    	height: 25px;
+    	margin-top: 1.5%;
+    	vertical-align: top;
+    	text-decoration-line: #1E1E1E;
+    	border: 1px solid transparent;
+        border-radius: 3px;
+        color: #cacaca;
+        border-left: 0px;
+    }
+    #profileContent{
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+    #btnSignout{
+        display: inline;
+        font-size: 4vw;
+        padding: 1vh;
+        border-radius: 7px;
+        margin-right: 2%;
+    }
+    #btnUpload{
+        display: none;
+        font-size: 4vw;
+        padding: 1vh;
+        border-radius: 7px;
+        margin-right: 2%;
+    }
+    #btnSetting{
+        display: inline;
+        font-size: 4vw;
+        padding: 1vh;
+        border-radius: 7px;
+        margin-right: 2%;
+    }
+    #repAnon{
+    	font-size: 4vw;
+    }
+    
+    #joinedDate{
+    	font-size: 4vw;
+    }
+    
+    #likesMemesC{
+    	width: 100%;
+        display: block;
+    }
+
+    #search{
+        display:none;
+    }
+    #mobileSearch{
+        margin-top: 1.5%;
+        margin-left: 8%;
+        vertical-align: top;
+        display: inline;
+        border: 1px solid #dce1e8;
+        background-color: gray;
+        font-size: 4vw;
+        padding: 1vh;
+        border-radius: 7px;
+        margin-right: 2%;
+    }
+    #profPic {
+            margin-right: 5%;
+    }
+    #CorpImg{
+        width: 40%;
+        /*display: block;*/
+        margin: auto;        
+    }
+    .searchBar{
+        display:none;
+    }
+    #loginContent{
+        width: 80%;
+    }
+    h2{
+        font-size: 7vw;
+    }
+    /*p{*/
+    /*    display:none;*/
+    /*}*/
+    .hideOnMobile{
+        display:none;
+    }
+}

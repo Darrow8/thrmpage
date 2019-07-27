@@ -1,0 +1,115 @@
+/* background is #000, header is #1E1E1E, button is #3d90c4, logo is #3d90c4*/
+.topButton {
+  background-color: #3d90c4;
+  border: none;
+  color: black;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /*padding-top: 30px;*/
+  /*margin-top: 20px;*/
+  /*height:200px;*/
+  float:right;
+  margin-right: 50px;
+  margin-top: 9px;
+}
+#header{
+  	/*margin-top: 30px;*/
+	/*float: center;*/
+	background-color: #1E1E1E;
+
+}
+#search{
+	display: inline;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  float: center;
+	border: 1px solid transparent;
+    border-radius: 3px;
+}
+.searchBar{
+	background-color: #1E1E1E;
+	height: 25px;
+	margin-top: 20px;
+	vertical-align: top;
+	text-decoration-line: #1E1E1E;
+	border: 1px solid transparent;
+    border-radius: 3px;
+    color: #cacaca;
+    border-left: 0px;
+}
+#searchButton{
+	border-left: 0px;
+	height: 27px;
+	background-color: #3d90c4;
+	color:black;
+}
+
+
+#loginContent{
+	color: white;
+	font-family: Helvetica, Arial, sans-serif;
+	display: inline-block;
+	background-color: grey;
+	 position: absolute;
+	 margin: auto;
+	 top: 0;
+	 right: 0;
+	 bottom: 200px;
+	 left: 0;
+	 width: 150px;
+	 height: 250px;
+
+}
+#email{
+	display: block;
+}
+#pword{
+	display: block;
+	margin-bottom: 20px;
+}
+.tellers{
+	display:inline-block;
+	font-size: 15px;
+	margin-top: 10px;
+	right: 50px;
+}
+::placeholder{
+    color:black;
+}
+@media screen and (max-width: 481px){
+    #CorpImg{
+        width: 40%;
+        display: inline;
+        /*margin: auto;        */
+    }
+    #searchButton{
+    	display:none;
+    }
+    #profPic{
+    	margin-right: 5%;
+        float: right;
+        height: auto;
+        width: 12vw;
+    }
+    #search{
+        display:none;
+    }
+    .searchBar{
+        display:none;
+    }
+    #image{
+       display:block; 
+    }
+    #username{
+       display:block; 
+    }
+    #save{
+       display:block; 
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" type="image/x-icon" href="../models/thrmpage-vertical.png" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141223562-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141223562-1');
+</script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-storage.js"></script>
+  <link rel="stylesheet" type="text/css" href="../styles/editor.css">
+  <link rel="stylesheet" type="text/css" href="../styles/universal.css">
+  <link rel="stylesheet" type="text/css" href="../styles/search.css">
+	<title>Settings</title>
+	<script type="text/javascript">
+    var config = {
+      apiKey: "AIzaSyAgH_16bOTK4qHN8bNrRx0h3X-Q0wfOf1s",
+      authDomain: "holyromanmemepage.firebaseapp.com",
+      databaseURL: "https://holyromanmemepage.firebaseio.com",
+      projectId: "holyromanmemepage",
+      storageBucket: "holyromanmemepage.appspot.com",
+      messagingSenderId: "984265141194"
+    };
+    firebase.initializeApp(config);
+    var storage = firebase.app().storage("gs://holyromanmemepage.appspot.com/");
+    var storageRef = storage.ref();
+    var auth = firebase.auth();
+    var db = firebase.firestore();
+	</script>
+<div id = "header">
+<script>
+    function goToFeed(){
+	location.replace("../pages/index.html");
+    }
+    function goToHome(){
+	location.replace("../pages/homepage.html");
+    }
+</script>
+<div id="header">
+    <div style="vertical-align: middle;">
+		<a href= "Javascript: goToFeed()"id="profBtn"><img id="CorpImg"width = "15.7132%" height = auto src="../models/thrmpage_blue.png"></a>
+		<div id="search" >
+			<input style="width: 42.5%; margin-left: 3%;" placeholder = "Search memes by tag or name"class = "searchBar" id="searchInput" type="text" name="search">
+			<button class = "searchBar" onclick = "search(document.getElementById('searchInput').value)" id="searchButton">Search!</button>
+			<button class = "searchBar" id="searchButton" onclick="location.replace('http://www.thrmpage.com/pages/upload.html');">Create</button>
+		</div>
+		<a href= "Javascript: goToHome()"id="profBtn"><img style="margin-right: 10%; float: right;" id="profPic" src=""></a>
+	</div>
+</div> 
+</head>
+<body onload="getCurrent()">
+<!--<button onclick="goBack()">Back</button>-->
+<p>Change the values you want to change. The elements that are not changed will remain the same.</p>
+<div id="image">
+<img width = "200" id = "img" src="">
+<label>Image </label><input id = "imgEnter"type="file" name="profilePic" accept="image/*">
+</div>
+<div id="username">
+<label>Username </label><input style="border: 1px solid transparent;border-radius: 3px;color: white; background-color: #686d75; margin-top: 0px" id = "usernameInput"type="" name="username">
+</div>
+<br>
+<button id="save"onclick="uploadMan()">Save</button>
+<br>
+<p id="doneText" style="color:red"></p>
+<!--<p>Please email thrmpage@gmail.com if you have any problems with this website or ideas to improve this website.</p>-->
+<!--<textarea class="searchBar"type="text" rows="2" cols="80" id="errorSubject" style="display:block;color: white; background-color: #686d75; margin-top: 0px" placeholder="Title of your message"></textarea>-->
+<!--<br>-->
+<!--<textarea class="searchBar"type="text" rows="5" cols="100" id="errorContent" style="color: white; background-color: #686d75; margin-top: 0px" placeholder="Content of your message"></textarea>-->
+<!--<button style="display:block;"onclick="sendMail()">Send</button>-->
+<script src = "../scripts/editor.js"type="text/javascript"></script>
+  <script type="text/javascript"src = "../scripts/search.js"></script>
+</body>
+</html>

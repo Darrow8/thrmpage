@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <!--<script src="sweetalert2.min.js"></script>-->
+    <!--<link rel="stylesheet" href="sweetalert2.min.css">-->
+
+    <link rel="shortcut icon" type="image/x-icon" href="../models/thrmpage-vertical.png" />
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141223562-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141223562-1');
+</script>
+<title>Sign Up</title>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+<link rel="stylesheet" type="text/css" href="../styles/auth.css">
+<link rel="stylesheet" type="text/css" href="../styles/universal.css">
+<link rel="stylesheet" type="text/css" href="../styles/search.css">
+<script type="text/javascript">
+	var config = {
+    apiKey: "AIzaSyAgH_16bOTK4qHN8bNrRx0h3X-Q0wfOf1s",
+    authDomain: "holyromanmemepage.firebaseapp.com",
+    databaseURL: "https://holyromanmemepage.firebaseio.com",
+    projectId: "holyromanmemepage",
+    storageBucket: "holyromanmemepage.appspot.com",
+    messagingSenderId: "984265141194"
+  };
+  	var provider = new firebase.auth.GoogleAuthProvider();
+	firebase.initializeApp(config);
+	var auth = firebase.auth();
+	var db = firebase.firestore();
+</script>
+<script>
+    function goToFeed(){
+	location.replace("../pages/index.html");
+    }
+    function goToHome(){
+	location.replace("../pages/homepage.html");
+    }
+    function goToSignup(){
+	location.replace("../pages/signup.html");
+    }
+    function goToLogin(){
+	location.replace("../pages/login.html");
+    }
+</script>
+<div id="header">
+    <div style="vertical-align: middle;">
+		<a href= "Javascript: goToFeed()"id="profBtn"><img id="CorpImg"width = "15.7132%" height = auto src="../models/thrmpage_blue.png"></a>
+		<div id="search" >
+			<input style="width: 42.5%; margin-left: 3%;" placeholder = "Search memes by tag or name"class = "searchBar" id="searchInput" type="text" name="search">
+			<button class = "searchBar" onclick = "search(document.getElementById('searchInput').value)" id="searchButton">Search!</button>
+			<button class = "searchBar" id="searchButton" onclick="
+                Swal.fire({
+                  title: 'Whoops',
+                  text: 'You need to create an account or login to do that...',
+                  type: 'warning',
+                  confirmButtonText: 'Signup', 
+                  background: '#1e1e1e',
+                })
+                .then(clicked => {
+                	if(clicked.value){
+                		location.href = 'https://www.thrmpage.com/pages/signup.html'
+                	}
+                });">Create</button>
+		</div>
+		<button class = "searchBar" onclick = "goToLogin()">Login</button>
+		<button class = "searchBar" onclick="goToSignup()">Signup</button>
+	</div>
+</div> 
+</head>
+<body>
+	<div id = "loginContent">
+		<h2>Recreate Your Account on thrmpage</h2>
+		<small>After an incident with our databases, we have sadly lost the majority of our data for our users. Recreate and repair your account with your email to access all of your memes. </small>
+		<small style="display:block">Gain 500 free rep and an "OG" tag when you recreate your account</small>
+		<!--<p class="hideOnMobile">----------------------</p>-->
+		<!--<p class="hideOnMobile" style="font-weight:bold;font-size:1.25vw;">Now 30% Less Stale!</p>-->
+		<!--<p class="hideOnMobile">----------------------</p>-->
+		<!--<small class="hideOnMobile">Thrmpage is a communinty of people who appreciate memes, but don't have the time to scroll through dozens to find the best memes. The thrmpage feed is a tailored feed of memes selected for your preferences. Please signup to begin your experience!</small>-->
+		<label  id="em"class = "tellers">Username: </label>
+		<input  type="input" name="name" id = "name"class = "lbl"placeholder="Username"spellcheck="false">
+		<label  id="em"class = "tellers">Email: </label>
+		<input  type="input" name="name" id = "email"class = "lbl"placeholder="Email"spellcheck="false">
+		<label  id="em"class = "tellers">Password: </label>
+		<input  type="password" type="password" name="password" class = "lbl" id = "pword" placeholder="Password"spellcheck="false">
+		<input  type="password" type="password" name="password" class = "lbl" id = "pword2" placeholder="Repeat Password"spellcheck="false">
+		<br>
+		<p style="display:inline;">Made Using Google Authentication</p><input style="display:inline;" type="checkbox" id="google" name="google" >
+		<br>
+		<button onclick="renewAccount()" id="btnSignup">Recreate</button>
+		<div id = "signupLoginTags">
+		<br>
+		<!--<button style="margin:0 auto; width: 30%;display: block;background-color: white;" onclick="googlePop()"> <img style="vertical-align: middle;"width = "25%"src="../models/google.jpg"></button>-->
+		<!--<p class="signupLoginTagsTxt">Already a user?</p>&nbsp<a href="Javascript: goToLogin()" class = "signupLoginTagsTxt" id="loginSignupATag">Login</a>-->
+		<small id= "error"></small>
+		</div>
+	</div>
+	<script type="text/javascript" src="../scripts/recreate.js"></script>
+  <script type="text/javascript"src = "../scripts/search.js"></script>
+</body>
+</html>

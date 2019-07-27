@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" type="image/x-icon" href="../models/thrmpage-vertical.png" />
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141223562-1"></script>
+<meta charset="UTF-8">
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141223562-1');
+</script>
+	<title>Homepage</title>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-storage.js"></script>
+<!--<script src="http://code.responsivevoice.org/responsivevoice.js"></script>-->
+<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">-->
+<!--<link rel="stylesheet" type="text/css" href="../styles/auth.css">-->
+<link rel="stylesheet" type="text/css" href="../styles/home.css">
+<link rel="stylesheet" type="text/css" href="../styles/universal.css">
+<link rel="stylesheet" type="text/css" href="../styles/search.css">
+<script type="text/javascript">
+    var config = {
+      apiKey: "AIzaSyAgH_16bOTK4qHN8bNrRx0h3X-Q0wfOf1s",
+      authDomain: "holyromanmemepage.firebaseapp.com",
+      databaseURL: "https://holyromanmemepage.firebaseio.com",
+      projectId: "holyromanmemepage",
+      storageBucket: "holyromanmemepage.appspot.com",
+      messagingSenderId: "984265141194"
+    };
+    firebase.initializeApp(config);
+    var storage = firebase.app().storage("gs://holyromanmemepage.appspot.com/");
+    var storageRef = storage.ref();
+    var auth = firebase.auth();
+    var db = firebase.firestore();
+</script>
+<div id = "header">
+    <div style="vertical-align: middle;">
+		<a href= "Javascript: goToFeed()"id="profBtn"><img style="margin-left: 5%;" id="CorpImg"width = "15.7132%" height = auto src="../models/thrmpage_blue.png"></a>
+		<!--<button id="mobileSearch">Search</button>-->
+		<div id="search" >
+			<input style="margin-left: 3%;" placeholder = "Search memes by tag or name"class = "searchBar" id="searchInput" type="text" name="search">
+			<button class = "searchBar" onclick = "search(document.getElementById('searchInput').value)" id="searchButton">Search!</button>
+			<button class = "searchBar" id="searchButton" onclick="location.replace('http://www.thrmpage.com/pages/upload.html');">Create</button>
+		</div>
+		<!--<div id="mobileSearchInput">-->
+		<!--    <div id="mobileDisplay">-->
+		<!--	    <span id="closeMobileSearch">&times;</span>-->
+		<!--	<input style="margin-left: 3%;" placeholder = "Search memes by tag or name" class="mobileSearchDisplayBox"id="searchInput" type="text" name="search">-->
+		<!--    </div>-->
+		<!--</div>-->
+		<a href= "Javascript: profSearch()"id="profBtn"><img style="float: right;" id="profPic" src=""></a>
+	</div>
+</div>
+</head>
+<script type="text/javascript">
+	//run all
+	function run(){
+		onstartH()
+		openTab(event,'memeTab')
+		// setTimeout(function(){
+		// 		//if(ifProf){
+		// 		listLikedMemes()
+		// 		listYourMemes()
+		// },3000)
+		// streakStart()
+	}
+</script>
+<body onload="run()">
+
+
+
+
+<div class="homepageRow">
+	<div class="column" id="profileContent">
+		<div id="profileInformation">
+			<img id = "img" src="">
+		<!-- 	<div id="favMemeDiv">
+				<img id = "favMeme" src="">
+				<p>Favorite Meme</p>
+			</div> -->
+			<!--<div id="badgeWrapper">-->
+			<h3 style="margin:1vh;display:inline-block;" id="name"></h3>
+			<p style="display:inline-block;">    </p> 
+			<button id="badge"></button>
+			<!--</div>-->
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+
+			  <!-- Modal content -->
+			  <div class="modal-content">
+			    <span class="close">&times;</span>
+			    <div>
+			    	<h3 id="modalText">Choose a Meme to Display:</h3>
+					<div id="memesDivModal">
+					</div>
+			    </div>
+			  </div>
+			</div>
+			<div id="divInfo">
+				<h4 style="margin:1vh;"id="repAnon">Rep</h4>
+				<p id="joinedDate"></p>
+		<!-- 		<div class="popup">
+					<img id = "popupinfo" src="../models/StatusChartHRM.png">
+				</div>
+				<p id="rank">Rank: </p> <a id="rankGraphInformationBubble"href="Javascript: displayRankChart(popupinfo)"><i class="fas fa-info-circle"></i></a> -->
+				<!-- <p id="streakNum">Streak: </p> -->
+				<p class="follow"id="tFollowers"></p>
+				<p class="follow"id="tFollowing"></p>
+		<!-- 		<p id="nPost"></p>
+				<p id="nRebut"></p> -->
+			</div>
+		<!-- <button onclick = "goToFeed()"id="btnHomepage">Your Feed</button> -->
+		<!-- <button onclick = "streakGo()" id="streakButton">Streak</button> -->
+		<div id="buttons">
+		<br>
+		<button onclick = "signoutFunc()"id="btnSignout">Signout</button>
+		<button onclick = "goToUpload()" id="btnUpload">Create</button>
+		<button onclick = "editor()" id="btnSetting">Settings</button>			
+		</div>
+		</div>
+		<br>
+		<div id="firstTimeOffer">
+			<!-- <br> -->
+			<h4>Limited Time Offer!</h4>
+			<p>Share your code with a friend and BOTH you and your friend get 100 free rep points (unlimited uses)!</p>
+			<input type="text" style="display: inline" id = "yourCode">
+			<button onclick="copyCode()" style="border-radius: 5px;">Copy</button>
+			<p>Input a friend's code!</p>
+			<input style="display: inline" type="text" id="friendCode" name="friendCode">
+			<button onclick="runCode()">Go</button>
+		</div>
+	</div>
+  <div id="likesMemesC" class="column" style="background-color:#1E1E1E;">
+	  	<div class = "tab">
+	  		<!-- <button onclick="openTab(event,'LikedTab')"class="tablink">Liked Memes</button> -->
+	  		<!-- <button onclick="openTab(event,'memeTab')"class="tablink">Your Memes</button> -->
+	  		<!-- <button onclick="openTab(event,'friendMemes')"class="tablink">Friend's Memes</button> -->
+	  	</div>
+<!-- 	  <div id="LikedTab" class="tabcontent">
+	  	<h4 id="memeCatLiked">Liked Memes</h4>
+			<div id="likedMemes">
+
+			</div>
+			<div id="likedMemesManual">
+
+			</div>
+	  </div> -->
+	  <div style = "display: none" id="memeTab" class="tabcontent">
+	  	<h4 id="memeCatYours">Your Memes</h4>
+			<div id="madeMemes">
+				
+			</div>
+			<div id="madeMemesManual">
+				
+			</div>
+	  </div>
+<!-- 	  <div style = "display: none" id="friendMemes" class="tabcontent">
+			<div id="likedMemes2">
+				
+			</div>
+			<div id="likedMemesManual2">
+				
+			</div>
+	  </div> -->
+  </div>
+</div>
+	<br>
+	<div id="tableDiv">
+<!-- 		<table>
+			<tr>
+				<td>Hi</td>
+				<td>Bye</td>
+			</tr>
+		</table> -->
+	</div>
+	<div id="memesDiv">
+	</div>
+	<textarea id="copytxt"></textarea>
+	<script type="text/javascript" src="../scripts/home.js"></script>
+	<script type="text/javascript"src = "../scripts/search.js"></script>
+</body>
+</html>

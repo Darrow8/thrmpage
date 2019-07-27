@@ -1,0 +1,291 @@
+/* background is #000, header is #1E1E1E, button is #3d90c4, logo is #3d90c4*/
+.topButton {
+  background-color: #3d90c4;
+  border: none;
+  color: black;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /*padding-top: 30px;*/
+  /*margin-top: 20px;*/
+  /*height:200px;*/
+  float:right;
+  margin-right: 50px;
+  margin-top: 9px;
+}
+#header{
+  	/*margin-top: 30px;*/
+	/*float: center;*/
+	background-color: #1E1E1E;
+
+}
+#searchInput{
+  width: 42.5%;
+}
+#search{
+	display: inline;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  float: center;
+	border: 1px solid transparent;
+    border-radius: 3px;
+}
+.searchBar{
+	background-color: #1E1E1E;
+	height: 25px;
+	margin-top: 20px;
+	vertical-align: top;
+	text-decoration-line: #1E1E1E;
+	border: 1px solid transparent;
+    border-radius: 3px;
+    color: #cacaca;
+    border-left: 0px;
+}
+#searchButton{
+	border-left: 0px;
+	height: 27px;
+	background-color: #3d90c4;
+	color:black;
+}
+#loginContent{
+	color: white;
+	font-family: Helvetica, Arial, sans-serif;
+	display: inline-block;
+	background-color: grey;
+	 position: absolute;
+	 margin: auto;
+	 top: 0;
+	 right: 0;
+	 bottom: 200px;
+	 left: 0;
+	 width: 150px;
+	 height: 250px;
+
+}
+#email{
+	display: block;
+}
+#pword{
+	display: block;
+	margin-bottom: 20px;
+}
+.tellers{
+	display:inline-block;
+	font-size: 15px;
+	margin-top: 10px;
+	right: 50px;
+}
+
+.imgDiv{
+  height: 55vh;
+  margin: auto;
+  width: 75%;
+  /*padding: 10px;*/
+  text-align: center;
+  border: 1px solid black;
+  background: #0c0c0c;
+}
+
+.buttonDiv{
+  background-color: #FF4136;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#projector{
+    height: 55.555555555%;
+}
+#size{
+  float: right;
+  margin-right: 12%;
+}
+#imgMeme {
+  display: none;
+  height: 0.55555555555%;
+  width: auto;
+}
+#secondMyImg{
+  display: inline-block;
+  height: 0.55555555555%;
+  position: relative;
+  z-index: 1;
+}
+#myImg{
+  position: absolute;
+  z-index: 1;
+}
+#start{
+  float: left;
+  margin-left: 12%;
+}
+#stop{
+  float: left;
+}
+#fullscreenPic{
+  height: 25px;
+  width: auto;
+}
+.responseImg{
+  position: absolute;
+  z-index: 2;
+  right: 50%;
+  top: 50%;
+}
+
+#likesMemesC{
+  text-align: center;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: #000;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+#likeMeter{
+  /*display: inline-block;*/
+  text-align: center;
+}
+
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #1E1E1E;
+  /*height: 100%;*/
+  margin: auto;
+  padding: 20px;
+  /*border: 1px solid #888;*/
+  /*width: 80%;*/
+}
+.modalTxt{
+    text-align:center;
+    color:white;
+    margin: 5%;
+}
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: grey;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#mobileSignup{
+    display:none;
+}
+
+
+
+@media screen and (max-width: 481px){
+    #profileContent{
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+    #search{
+        display:none;
+    }
+    #mobileSignup{
+        
+    }
+    #mobileSearch{
+        margin-top: 1.5%;
+        margin-left: 8%;
+        vertical-align: top;
+        display: inline;
+        border: 1px solid #dce1e8;
+        background-color: gray;
+        font-size: 4vw;
+        padding: 1vh;
+        border-radius: 7px;
+        margin-right: 2%;
+    }
+    #profPic {
+        margin-right: 5%;
+    }
+    #CorpImg{
+        width: 40%;
+        /*display: block;*/
+        margin: auto;        
+    }
+    .searchBar{
+        display:none;
+    }
+    #signupMobile{
+        float:right;
+        display:inline;
+        margin-right: 5vh;
+        margin-top: 1.5vh;
+    }
+    #loginContent{
+        width: 80%;
+    }
+    .imgDiv{
+        width:100%;
+    }
+    /*h2{*/
+    /*    font-size: 7vw;*/
+    /*}*/
+    /*.hideOnMobile{*/
+    /*    display:none;*/
+    /*}*/
+}

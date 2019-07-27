@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../models/thrmpage-vertical.png" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141223562-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-141223562-1');
+    </script>
+    <title>Meme Creator</title>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-storage.js"></script>
+    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+    <script type="text/javascript">
+        var config = {
+        apiKey: "AIzaSyAgH_16bOTK4qHN8bNrRx0h3X-Q0wfOf1s",
+        authDomain: "holyromanmemepage.firebaseapp.com",
+        databaseURL: "https://holyromanmemepage.firebaseio.com",
+        projectId: "holyromanmemepage",
+        storageBucket: "holyromanmemepage.appspot.com",
+        messagingSenderId: "984265141194"
+      };
+    firebase.initializeApp(config);
+    var storage = firebase.app().storage("gs://holyromanmemepage.appspot.com/");
+    var storageRef = storage.ref();
+    var auth = firebase.auth();
+    var db = firebase.firestore();
+    </script>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meme Generator</title>
+    <!-- <script defer src="./fonts/fontawesome-all.js"></script> -->
+    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="../styles/universal.css">
+<link rel="stylesheet" type="text/css" href="../styles/search.css">
+<link rel="stylesheet" type="text/css" href="../styles/upload.css">
+</head>
+<script type="text/javascript">
+    function bodyLoad(){
+        inity()
+        setTimeout(function(){
+            onstart()
+        },1200)
+    }
+</script>
+<body onload="bodyLoad()">
+<script>
+    function goToFeed(){
+	location.replace("../pages/index.html");
+    }
+    function goToHome(){
+	location.replace("../pages/homepage.html");
+    }
+</script>
+<div id="header">
+    <div style="vertical-align: middle;">
+		<a href= "Javascript: goToFeed()"id="profBtn"><img style="margin-left: 5%;" id="CorpImg"width = "15.7132%" height = auto src="../models/thrmpage_blue.png"></a>
+		<div id="search" >
+			<input style="width: 42.5%; margin-left: 3%;" placeholder = "Search memes by tag or name"class = "searchBar" id="searchInput" type="text" name="search">
+			<button class = "searchBar" onclick = "search(document.getElementById('searchInput').value)" id="searchButton">Search!</button>
+			<button class = "searchBar" id="searchButton" onclick="location.replace('http://www.thrmpage.com/pages/upload.html');">Create</button>
+	        <script type="text/javascript"src = "../scripts/search.js"></script>
+		</div>
+		<a href= "Javascript: goToHome()"id="profBtn"><img style="margin-right: 10%;float: right;" id="profPic" src=""></a>
+	</div>
+</div> 
+    <header>
+        <div class="container">
+            <!--<h2>Gallery</h2>-->
+        </div>
+
+    </header>
+    <main>
+        <div>
+            <h4>Select a meme template or upload your own, then add text and images to your meme!</h4>
+            <section class="gallery grid-container">
+                <!-- js render -->
+                <p style="color:green;">Yay! Everything is loading correctly, please wait... If you're a hasteful person and can't wait, try counting sheep. No wait that's for slee—Zzzzzzzz</p>
+             <!--<script>setTimeout(function(){document.getElementById('jokes').style.display = "block"},1000)</script>-->
+             <!--<div style="display:none" id="jokes">   -->
+             <!--   <ul>-->
+             <!--       <li style="color:green;">Today at the bank, an old lady asked me to help check her balance. So I pushed her over.</li>-->
+             <!--       <li style="color:green;">I bought some shoes from a drug dealer. I don't know what he laced them with, but I've been tripping all day.</li>-->
+             <!--       <li style="color:green;">I told my girlfriend she drew her eyebrows too high. She seemed surprised.</li>-->
+             <!--       <li style="color:green;">My dog used to chase people on a bike a lot. It got so bad, finally I had to take his bike away.</li>-->
+             <!--       <li style="color:green;">I'm so good at sleeping. I can do it with my eyes closed.</li>-->
+             <!--   </ul>-->
+            </div>       
+            </section>
+            <section class="meme-container hidden">
+                <div class="editTxt">
+                    <button id="backtoGalleryBtn"class="editingBtns"onclick="toggleView()">
+                        <p class="editTxt">Back to Gallery</p>
+                    </button>
+                    <button id="addLineBtn"class="editingBtns" onclick="newTxtBtnClicked()">
+                        <p class="editTxt">Add Line</p>
+                    </button>              
+                </div>
+                <div class="meme-control">
+                    <canvas class="memeCanvas">
+                        Your browser does not support the HTML5 canvas tag.
+                    </canvas>
+
+                    <div class="txts-list">
+                        <!-- js render -->
+                    </div>
+                </div>
+             <p id="tagText">Enter tags related to your meme</p>
+            <div id="officialTags">
+            </div>
+              <input id="searchTag" placeholder = "pianoCat, doge, trollface, etc" class = "searchTagBar" size = "80" type="text" name="search">
+              <div id="tagSearchDiv">
+               <p><small>Right Click to learn more on each tag, Left click on any tag to add or remove it from the tags related to your meme</small></p>
+              </div> 
+              <div id= "uploadDiv">
+                <button id="uploadBtn"class="editingBtns" onclick="uploadManY()">
+                    <p class="editTxt">Upload</p>
+                </button>   
+                </div>  
+            </section>
+<!--             <section class="contact">
+
+            </section> -->
+            <p style="color:red;" id="errorText"></p>
+        </div>
+    </main>
+
+<!--     <footer>
+        <div class="container">
+
+        </div>
+    </footer> -->
+    <!-- <script type="text/javascript" src="../scripts/upload.js"></script> -->
+    <script type="text/javascript" src = "../scripts/designUpload.js"></script>
+    <script type="text/javascript" src = "../scripts/search.js"></script>
+    <script type="text/javascript" src="js/images.js"></script>
+    <script type="text/javascript" src="js/meme.js"></script>
+    <script type="text/javascript" src="../scripts/universal.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- <div class="collapsible-pane" data-label="Filters" style="">
+    <div class="Filter slider" style="">
+        <span>brightness (<span class="FilterValue">15</span>) </span>
+
+        <div class="FilterSetting" style="" data-children-count="1">
+            <input type="range" min="-10" max="30" step="1" value="15" data-filter="brightness" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;"><div class="rangeslider rangeslider--horizontal" id="js-rangeslider-0" style=""><div class="rangeslider__fill" style="width: 124.75px;"></div><div class="rangeslider__handle" style="left: 113.75px;"></div></div>
+
+        </div>
+    </div>
+    <div class="Filter slider" style="">
+        <span>contrast (<span class="FilterValue">155</span>) </span>
+        <div class="FilterSetting" style="" data-children-count="1">
+            <input type="range" min="0" max="300" step="1" value="155" data-filter="contrast" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;"><div class="rangeslider rangeslider--horizontal" id="js-rangeslider-1" style=""><div class="rangeslider__fill" style="width: 105.033px;"></div><div class="rangeslider__handle" style="left: 94.0333px;"></div></div>
+
+        </div>
+    </div>
+    <div class="Filter slider" style="">
+        <span>sharpen (<span class="FilterValue">83</span>) </span>
+        <div class="FilterSetting" style="" data-children-count="1">
+            <input type="range" min="0" max="800" step="1" value="83" data-filter="sharpen" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;"><div class="rangeslider rangeslider--horizontal" id="js-rangeslider-2" style=""><div class="rangeslider__fill" style="width: 29.8825px;"></div><div class="rangeslider__handle" style="left: 18.8825px;"></div></div>
+
+        </div>
+    </div>
+    <div class="Filter slider" style="">
+        <span>saturation (<span class="FilterValue">0</span>) </span>
+        <div class="FilterSetting" style="" data-children-count="1">
+            <input type="range" min="0" max="300" step="1" value="0" data-filter="saturation" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;"><div class="rangeslider rangeslider--horizontal" id="js-rangeslider-3" style=""><div class="rangeslider__fill" style="width: 11px;"></div><div class="rangeslider__handle" style="left: 0px;"></div></div>
+
+        </div>
+    </div>
+    <div class="Filter slider" style="">
+        <span>noise (<span class="FilterValue">18</span>) </span>
+        <div class="FilterSetting" style="" data-children-count="1">
+            <input type="range" min="0" max="100" step="1" value="18" data-filter="noise" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;"><div class="rangeslider rangeslider--horizontal" id="js-rangeslider-4" style=""><div class="rangeslider__fill" style="width: 43.76px;"></div><div class="rangeslider__handle" style="left: 32.76px;"></div></div>
+
+        </div>
+    </div>
+</div> -->

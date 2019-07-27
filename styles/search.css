@@ -1,0 +1,76 @@
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+#autoresults input {
+/*  border: 1px solid transparent;*/
+  background-color: #3d90c4;
+  padding: 10px;
+  font-size: 10px;
+}
+#autoresults input[type=text] {
+  background-color: #3d90c4;
+  width: 100%;
+}
+#autoresults input[type=submit] {
+  background-color: #3d90c4;
+  color: #000;
+}
+.autocomplete-items {
+  position: absolute;
+  /*border: 1px solid #d4d4d4;*/
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*top: 100%;*/
+  left: 25.805555555%;
+  right: 20.138888888%;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #1E1E1E; 
+  border-radius: 5px;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #7c7b7b; 
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: #3d90c4 !important; 
+  color: #ffffff; 
+}
+.autotag {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+.autotag-items {
+  /*position: absolute;*/
+  /*border: 1px solid #d4d4d4;*/
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*top: 100%;*/
+/*  left: 530px;
+  right: 290px;*/
+}
+.autotag-items div {
+  padding: 10px;
+  cursor: pointer;
+  color: black;
+  font-size: 12px;
+  /*background-color: #1E1E1E; */
+  /*border-radius: 5px;*/
+}
+.autotag-items div:hover {
+  /*when hovering an item:*/
+  background-color: #bf7a13; 
+}
+.autotag-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: #3d90c4 !important; 
+  color: #ffffff; 
+}

@@ -1,0 +1,191 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>-->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" type="image/x-icon" href="../models/thrmpage-vertical.png" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141223562-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-141223562-1');
+</script>
+<title>Feed</title>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-storage.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.thrmpage.com/jquery.mb.audio.js?_=8y338"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=5ldqBakn"></script>
+<link rel="stylesheet" type="text/css" href="/styles/universal.css">
+<link rel="stylesheet" type="text/css" href="/styles/search.css">
+    <script type="text/javascript">
+    var config = {
+      apiKey: "AIzaSyAgH_16bOTK4qHN8bNrRx0h3X-Q0wfOf1s",
+      authDomain: "holyromanmemepage.firebaseapp.com",
+      databaseURL: "https://holyromanmemepage.firebaseio.com",
+      projectId: "holyromanmemepage",
+      storageBucket: "holyromanmemepage.appspot.com",
+      messagingSenderId: "984265141194"
+    };
+    firebase.initializeApp(config);
+    var storage = firebase.app().storage("gs://holyromanmemepage.appspot.com/");
+    var storageRef = storage.ref();
+    var auth = firebase.auth();
+    var db = firebase.firestore();
+    // alert('here')
+    </script>
+<div id = "header">
+<script>
+    function goToFeed(){
+	location.replace("../pages/index.html");
+    }
+    function goToHome(){
+	location.replace("../pages/homepage.html");
+    }
+</script>
+
+    <!---->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>-->
+    <!--<meta name="apple-mobile-web-app-capable" content="yes"/>-->
+    <!--<meta name="apple-mobile-web-app-status-bar-style" content="black"/>-->
+
+    <!--<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>-->
+    <!--<script type="text/javascript" src="jquery.mb.audio.js?_=8y338"></script>-->
+    <script type="text/javascript">
+
+        /*
+         * DEFINE SOUNDS
+         */
+        $.mbAudio.sounds = {
+
+            back: {
+                id: "back",
+                ogg: "/models/bensound-allthat.ogg",
+                mp3: "/models/bensound-allthat.mp3",
+                //example of sprite
+                sprite:{
+                    full: {id: "full", start: 0, end: 145, loop: true},
+                }
+            },
+
+            beep: {
+                id: "beep",
+                ogg: "/models/censor.ogg",
+                mp3: "/models/censor.mp3",
+                //example of sprite
+                sprite:{
+                    full: {id: "full", start: 0, end: 100, loop: true},
+                }
+            }          
+        };
+
+        function audioIsReady(){
+
+            setTimeout(function(){
+                // $('#buttons').fadeIn();
+                // $("#loading").hide();
+
+                if(isStandAlone || !isDevice)
+                    $.mbAudio.queue.add('backgroundSprite',"levelIntro");
+
+            },3000);
+
+        }
+
+        $(document).on("initAudio", function () {
+            $.mbAudio.pause('effectSprite', audioIsReady);
+
+
+            // $('#start').hide();
+            // $("#loading").show();
+        });
+
+         $(document).on("event1", function () {toggleButtons(); $.mbAudio.play('back', 'full')});
+         $(document).on("event2", function () {toggleButtons(); $.mbAudio.play('beep', 'full')});
+        // $(document).on("event3", function () {toggleButtons(); $.mbAudio.queue.add('effectSprite', 'streak',toggleButtons)});
+        // $(document).on("event4", function () {$.mbAudio.queue.add('backgroundSprite', 'levelIntro')});
+
+        function toggleButtons(){
+            $("button").toggleClass("disabled");
+        }
+
+    </script>
+
+
+
+
+    <div id="headDiv"style="vertical-align: middle;">
+		<a href= "Javascript: goToFeed()"id="profBtn"><img style="margin-left: 5%;" id="CorpImg"width = "15.7132%" height = auto src="../models/thrmpage_blue.png"></a>
+		<div id="search" >
+			<input style="margin-left: 3%;" placeholder = "Search memes by tag or name"class = "searchBar" id="searchInput" type="text" name="search">
+			<button class = "searchBar" onclick = "search(document.getElementById('searchInput').value)" id="searchButton">Search!</button>
+			<button class = "searchBar" id="searchButton" onclick="location.replace('http://www.thrmpage.com/pages/upload.html');">Create</button>
+		</div>
+		<a href= "Javascript: goToHome()"id="profBtn"><img style="margin-right: 10%;float: right;" id="profPic" src=""></a>
+	</div>
+</div>  
+</head>
+<body onload = "onstartF()">
+    <!--<button style="cursor:pointer" onmousedown="$(document).trigger('event2');">BUTTON</button>-->
+  <footer>Press the up arrow or the fire icon to like memes and the right arrow or click the meme to skip memes. Press the 'start' button to begin! Background Audio from bensound.com</footer>
+  <div id="projector"class = "imgDiv">
+    <div id="imgMeme">
+      <!-- MAKE SURE THEY ARE IN THIS ORDER -->
+      <img id="likeMemeBtn" class= "responseImg"src="/models/like.png">
+      <img id="skipMemeBtn" class= "responseImg"src="/models/skip.png">
+      <img class = "imgFeed" id = "secondMyImg" src="">
+      <canvas class="memeCanvas" id="canvasImage"></canvas>
+      <canvas class="memeCanvas" id="canvasImage2"></canvas>
+    </div>
+    <img class = "imgFeed" 
+    height= "0.55555555555%"
+    id = "myimg" src="/models/thrmpage-vertical.png">
+    </div>
+    <div>
+      <p id="likeMeter">🔥🔥🔥</p>
+      
+    </div>
+  </div>
+  <!-- <br> -->
+  <div id = "buttonDiv">
+    <button id="start" onclick="playStopSwitcher()">Start</button>
+    <a href="Javascript:resize()" id="size"><img id="fullscreenPic" src="/models/iconEnlarge.png"></a>
+    <p id="messageText"></p>
+  </div>
+  <div id="memeInfo"></div>
+  <footer>
+    <p id="prod"></p>
+  </footer>
+
+  <link rel="stylesheet" type="text/css" href="/styles/myFeed.css">
+  <script type="text/javascript" charset="UTF-8" src="/scripts/feedGen.js"></script>
+
+  <script type="text/javascript"src = "/scripts/search.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

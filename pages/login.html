@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" type="image/x-icon" href="../models/thrmpage-vertical.png" />
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141223562-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-141223562-1');
+	</script>
+	<title>Login</title>
+	<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+	<link rel="stylesheet" type="text/css" href="../styles/auth.css">
+	<link rel="stylesheet" type="text/css" href="../styles/universal.css">
+	<link rel="stylesheet" type="text/css" href="../styles/search.css">
+	<script type="text/javascript">
+		var config = {
+	    apiKey: "AIzaSyAgH_16bOTK4qHN8bNrRx0h3X-Q0wfOf1s",
+	    authDomain: "holyromanmemepage.firebaseapp.com",
+	    databaseURL: "https://holyromanmemepage.firebaseio.com",
+	    projectId: "holyromanmemepage",
+	    storageBucket: "holyromanmemepage.appspot.com",
+	    messagingSenderId: "984265141194"
+	  };
+	  	var provider = new firebase.auth.GoogleAuthProvider();
+		firebase.initializeApp(config);
+		var auth = firebase.auth();
+		var db = firebase.firestore();
+	</script>
+<script>
+    function goToFeed(){
+	location.replace("../pages/index.html");
+    }
+    function goToHome(){
+	location.replace("../pages/homepage.html");
+    }
+    function goToSignup(){
+	location.replace("../pages/signup.html");
+    }
+    function goToLogin(){
+	location.replace("../pages/login.html");
+    }
+</script>
+<div id="header">
+    <div style="vertical-align: middle;">
+		<a href= "Javascript: goToFeed()"id="profBtn"><img id="CorpImg"width = "15.7132%" height = auto src="../models/thrmpage_blue.png"></a>
+		<div id="search" >
+			<input style="width: 42.5%; margin-left: 3%;" placeholder = "Search memes by tag or name"class = "searchBar" id="searchInput" type="text" name="search">
+			<button class = "searchBar" onclick = "search(document.getElementById('searchInput').value)" id="searchButton">Search!</button>
+			<button class = "searchBar" id="searchButton" onclick="alert('Please login or signup to create or upload memes');">Create</button>
+	        <script type="text/javascript"src = "../scripts/search.js"></script>
+		</div>
+		<button class = "searchBar" onclick = "goToLogin()">Login</button>
+		<button class = "searchBar" onclick="goToSignup()">Signup</button>
+	</div>
+</div> 
+</head>
+<body>
+
+	<div id = "loginContent">
+		<h2 
+		class="loginInfo"
+		>Login to thrmpage.com</h2>
+		<label 
+		class="loginInfo" 
+		class = "tellers">Email: </label>
+		<input 
+
+		type="input" name="email" id = "email" class = "lbl" placeholder="Email"spellcheck="false">
+		<label 
+
+		class = "tellers">Password: </label>
+		<input 
+
+		type="password" name="password" class = "lbl" id = "pword" placeholder="Password"spellcheck="false">
+		<button id="btnLogin">Log In</button>
+		<!-- <button>Log in With Google</button> -->
+<!-- 		<button onclick = "goToSignup()">Sign Up</button> -->
+		<div id = "signupLoginTags">
+		  <br>
+		<button style="margin:0 auto; width: 30%;display: block;background-color: white;" onclick="googlePop()"> <img style="vertical-align: middle;"width = "25%"src="../models/google.jpg"></button>
+		<p class="signupLoginTagsTxt">New here?</p>&nbsp<a href="Javascript: goToSignup()" class = "signupLoginTagsTxt" id="loginSignupATag">Signup</a>
+		<small id= "error"></small>
+		</div>
+		<!-- <button onclick = "signoutFunc()"id="btnSignout">Sign Out</button> -->
+	</div>
+	<script type="text/javascript" src="../scripts/auth.js"></script>
+</body>
+</html>
+
+<!-- Firebase App is always required and must be first -->
+<!-- <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script> -->
+
+<!-- Add additional services that you want to use -->
+<!-- <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-functions.js"></script>
+ -->

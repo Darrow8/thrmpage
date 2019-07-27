@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" type="image/x-icon" href="../models/thrmpage-vertical.png" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141223562-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-141223562-1');
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-storage.js"></script>
+    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+    <script type="text/javascript">
+        var config = {
+        apiKey: "AIzaSyAgH_16bOTK4qHN8bNrRx0h3X-Q0wfOf1s",
+        authDomain: "holyromanmemepage.firebaseapp.com",
+        databaseURL: "https://holyromanmemepage.firebaseio.com",
+        projectId: "holyromanmemepage",
+        storageBucket: "holyromanmemepage.appspot.com",
+        messagingSenderId: "984265141194"
+      };
+    firebase.initializeApp(config);
+    var storage = firebase.app().storage("gs://holyromanmemepage.appspot.com/");
+    var storageRef = storage.ref();
+    var auth = firebase.auth();
+    var db = firebase.firestore();
+    </script>
+<!--     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Meme Generator</title>
+    <!-- <script defer src="./fonts/fontawesome-all.js"></script> -->
+    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="../styles/universal.css">
+<link rel="stylesheet" type="text/css" href="../styles/search.css">
+<link rel="stylesheet" type="text/css" href="../styles/upload.css">
+</head>
+<script type="text/javascript">
+    function bodyLoad(){
+        init()
+        setTimeout(function(){
+            init()
+        },1000)
+        // onstart()
+    }
+</script>
+<body onload="bodyLoad()">
+    <div id = "header">
+        <a href= "Javascript: goToSignup()"id="profBtn">
+        <img id="CorpImg"width = "15.7132%" height = auto src="../models/thrmpage_blue.png">
+        </a>
+        <div id="search" >
+            <input placeholder = "Search memes by tag or name"class = "searchBar"size = "100"id="searchInput" type="text" name="search">
+            <button class = "searchBar"id="searchButton">Search!</button>
+        </div>
+        <a href= "Javascript: home()"id="profBtn"><img  width = 100 id="profPic" src=""></a>
+    </div>
+    <header>
+        <div class="container">
+            <h2>Gallery</h2>
+        </div>
+
+    </header>
+    <main>
+        <div>
+            <section class="gallery grid-container">
+                <!-- js render -->
+            </section>
+
+            <section class="meme-container hidden">
+                <div class="editTxt">
+                    <button id="backtoGalleryBtn"class="editingBtns"onclick="toggleView()">
+                        <p class="editTxt">Back to Gallery</p>
+                    </button>
+                    <button id="addLineBtn"class="editingBtns" onclick="newTxtBtnClicked()">
+                        <p class="editTxt">Add Line</p>
+                    </button>
+                    <button id="uploadBtn"class="editingBtns" onclick="uploadMan()">
+                        <p class="editTxt">Upload</p>
+                    </button>                    
+                </div>
+                <div class="meme-control">
+                    <canvas class="memeCanvas">
+                        Your browser does not support the HTML5 canvas tag.
+                    </canvas>
+
+                    <div class="txts-list">
+                        <!-- js render -->
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="contact">
+
+            </section>
+            <p id="errorText"></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+
+        </div>
+    </footer>
+    <script src="js/images.js"></script>
+    <script src="js/meme.js"></script>
+   <script type="text/javascript"src = "../scripts/search.js"></script>
+   <!-- <script type="text/javascript"src = "../scripts/designUpload.js"></script> -->
+</body>
+
+</html>

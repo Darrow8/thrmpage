@@ -1,0 +1,143 @@
+.notLogged{
+	background-color: #1E1E1E;
+	height: 25px;
+	margin-top: 20px;
+	vertical-align: top;
+	text-decoration-line: #1E1E1E;
+	border: 1px solid transparent;
+    border-radius: 3px;
+    color: #cacaca;
+    border-left: 0px;
+    display: none;
+}
+.mainPhoto{
+    /*height: 80vh;*/
+    margin: auto;
+    display: block;
+}
+#userPic{
+    display:block;
+    width: 10vh;
+    object-fit: contain;
+    vertical-align: top;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 100px;
+}
+
+#imageDiv{
+    margin: auto;
+    width: 75%;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+    background: #0c0c0c;
+    height:55.5555%;
+}
+
+#likeNum{
+    text-align:center;
+}
+
+@media screen and (max-width: 481px){
+    .mobileSearchDisplayBox{
+    	background-color: #1E1E1E;
+    	height: 25px;
+    	margin-top: 1.5%;
+    	vertical-align: top;
+    	text-decoration-line: #1E1E1E;
+    	border: 1px solid transparent;
+        border-radius: 3px;
+        color: #cacaca;
+        border-left: 0px;
+    }
+    #profileContent{
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+    #btnSignout{
+        display: inline;
+        font-size: 4vw;
+        padding: 1vh;
+        border-radius: 7px;
+        margin-right: 2%;
+    }
+    #btnUpload{
+        display: none;
+        font-size: 4vw;
+        padding: 1vh;
+        border-radius: 7px;
+        margin-right: 2%;
+    }
+    #btnSetting{
+        display: inline;
+        font-size: 4vw;
+        padding: 1vh;
+        border-radius: 7px;
+        margin-right: 2%;
+    }
+    #repAnon{
+    	font-size: 4vw;
+    }
+    
+    #joinedDate{
+    	font-size: 4vw;
+    }
+    
+    #likesMemesC{
+    	width: 100%;
+        display: block;
+    }
+
+    #search{
+        display:none;
+    }
+    #mobileSearch{
+        margin-top: 1.5%;
+        margin-left: 8%;
+        vertical-align: top;
+        display: inline;
+        border: 1px solid #dce1e8;
+        background-color: gray;
+        font-size: 4vw;
+        padding: 1vh;
+        border-radius: 7px;
+        margin-right: 2%;
+    }
+    #profPic {
+        margin-right: 10%;
+    }
+    #userPic{
+        width: 6vh;
+    }
+    #CorpImg{
+        width: 40%;
+        display: inline;
+        margin: auto;        
+    }
+    .searchBar{
+        display:none;
+    }
+    #loginContent{
+        width: 80%;
+    }
+    h2{
+        font-size: 7vw;
+    }
+    /*p{*/
+    /*    display:none;*/
+    /*}*/
+    .hideOnMobile{
+        display:none;
+    }
+}
+
+
+
+
+
+
+
+

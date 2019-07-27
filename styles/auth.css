@@ -1,0 +1,149 @@
+/* background is #000, header is #1E1E1E, button is #3d90c4, logo is #3d90c4*/
+body {margin: 0; height: 100%;}
+.topButton {
+  background-color: #3d90c4;
+  border: none;
+  color: black;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /*padding-top: 30px;*/
+  /*margin-top: 20px;*/
+  /*height:200px;*/
+  float:right;
+  margin-right: 50px;
+  margin-top: 9px;
+}
+#header{
+  	/*margin-top: 30px;*/
+	/*float: center;*/
+	background-color: #1E1E1E;
+
+}
+#search{
+	display: inline;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  float: center;
+	border: 1px solid transparent;
+    border-radius: 3px;
+}
+.searchBar{
+	background-color: #1E1E1E;
+	height: 25px;
+	margin-top: 20px;
+	vertical-align: top;
+	text-decoration-line: #1E1E1E;
+	border: 1px solid transparent;
+    border-radius: 3px;
+    color: #cacaca;
+    border-left: 0px;
+}
+#searchButton{
+	border-left: 0px;
+	height: 27px;
+	background-color: #3d90c4;
+	color:black;
+}
+
+
+#loginContent{
+	color: #dedee5;
+	font-family: Helvetica, Arial, sans-serif;
+	/*display: inline-block;*/
+	background-color: #151516;
+	 /*position: absolute;*/
+	 /*margin: auto;*/
+/*	 top: 0;
+	 right: 0;
+	 bottom: 200px;
+	 left: 0;*/
+	 /*height: 250px;*/
+	  display: table;
+	  margin: auto;
+	  width: 40%;
+	  height: 100vh;
+	  text-align: center;
+
+
+}
+#center {
+}
+#email{
+	display: block;
+}
+#pword{
+	display: block;
+	margin-bottom: 20px;
+}
+.tellers{
+	display:block;
+	font-size: 15px;
+	margin-top: 2%;
+	margin-left: 32%;
+	text-align: left;
+}
+.em{
+	margin-right: 25%;
+	margin-top: 10px;
+}
+.lbl{
+	display: block;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: grey;
+	border: 1px solid transparent;
+	height: 20px;
+	border-radius: 7px;
+}
+.lbl::placeholder{
+	color: black;
+}
+#signupLoginTags{
+	color: #dedee5;	
+}
+.signupLoginTagsTxt{
+	color: #dedee5;	
+	text-decoration: none;
+	display: inline-block;
+}
+#loginSignupATag{
+	color: #3d90c4;
+}
+#CorpImg{margin-left: 5%;}
+#error{
+	color:red;
+	display: block;
+}
+
+@media screen and (max-width: 481px){
+    #search{
+        display:none;
+    }
+    #CorpImg{
+        width: 40%;
+        display: block;
+        margin: auto;        
+    }
+    .searchBar{
+        display:none;
+    }
+    #loginContent{
+        width: 80%;
+    }
+    h2{
+        font-size: 7vw;
+    }
+    /*p{*/
+    /*    display:none;*/
+    /*}*/
+    .hideOnMobile{
+        display:none;
+    }
+}

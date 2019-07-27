@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<meta content="width=device-width, initial-scale=1" name="viewport" />-->
+  <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="../models/thrmpage-vertical.png" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141223562-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141223562-1');
+</script>
+	<title>Upload Meme</title>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-storage.js"></script>
+<link rel="stylesheet" type="text/css" href="../styles/universal.css">
+<link rel="stylesheet" type="text/css" href="../styles/search.css">
+<link rel="stylesheet" type="text/css" href="../styles/upload.css">
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript">
+    var config = {
+      apiKey: "AIzaSyAgH_16bOTK4qHN8bNrRx0h3X-Q0wfOf1s",
+      authDomain: "holyromanmemepage.firebaseapp.com",
+      databaseURL: "https://holyromanmemepage.firebaseio.com",
+      projectId: "holyromanmemepage",
+      storageBucket: "holyromanmemepage.appspot.com",
+      messagingSenderId: "984265141194"
+    };
+    firebase.initializeApp(config);
+    var storage = firebase.app().storage("gs://holyromanmemepage.appspot.com/");
+    var storageRef = storage.ref();
+    var auth = firebase.auth();
+    var db = firebase.firestore();
+    </script>
+<div id = "header">
+<script>
+    function goToFeed(){
+	location.replace("../pages/index.html");
+    }
+    function goToHome(){
+	location.replace("../pages/homepage.html");
+    }
+</script>
+<div id = "header">
+    <div style="vertical-align: middle;">
+		<a href= "Javascript: goToFeed()"id="profBtn"><img style="margin-left: 5%;" id="CorpImg"width = "15.7132%" height = auto src="../models/thrmpage_blue.png"></a>
+		<!--<button id="mobileSearch">Search</button>-->
+		<div id="search" >
+			<input style="margin-left: 3%;" placeholder = "Search memes by tag or name"class = "searchBar" id="searchInput" type="text" name="search">
+			<button class = "searchBar" onclick = "search(document.getElementById('searchInput').value)" id="searchButton">Search!</button>
+			<button class = "searchBar" id="searchButton" onclick="location.replace('http://www.thrmpage.com/pages/upload.html');">Create</button>
+		</div>
+		<!--<div id="mobileSearchInput">-->
+		<!--    <div id="mobileDisplay">-->
+		<!--	    <span id="closeMobileSearch">&times;</span>-->
+		<!--	<input style="margin-left: 3%;" placeholder = "Search memes by tag or name" class="mobileSearchDisplayBox"id="searchInput" type="text" name="search">-->
+		<!--    </div>-->
+		<!--</div>-->
+		<a href= "Javascript: profSearch()"id="profBtn"><img style="float: right;" id="profPic" src=""></a>
+	</div>
+</div>
+</head>
+<body onload = "onstart()">
+  <div style="text-align: center;" class="content" id="choosing">
+    <h2 style="text-align: center;">Upload Manually or Design Your Meme</h2>
+    <div>
+      <div class="choiceDiv" id="manualChoice">
+        <img id="design" onmousedown="location.replace('https://www.thrmpage.com/pages/manualUpload.html')" class="chooseDesign" src="../models/autUpload.png">
+         <h3 class="caption">Design Your Own</h3> 
+      </div>
+      <div class="choiceDiv" id="DesignChoice">
+        <img id="upload"onmousedown = "switchContent()" class="chooseDesign" src="../models/manUpload.png">
+         <h3 class="caption">Upload Manually</h3> 
+      </div>
+    </div>
+    </div>
+<div class="content" id="manuallyUploading">
+  <input type="file" onchange="openFile(event)" name = "uploadManual" id="uploadManual" accept="image/*">
+  <br>
+  <img id = "copyImg" width = "300px" height = auto>
+  <p>Copy all of the text that is in your meme</p>
+  <textarea id="uploadText"class="uploadTx"cols= "100" rows= "3"placeholder="enter all the text from your meme" style="display:block"></textarea>
+   <div id="tagChooserDiv">
+     <p id="tagText">Enter tags related to your meme</p>
+    <div id="officialTags">
+    </div>
+      <input id="searchTag" placeholder = "pianoCat, doge, trollface, etc" class = "searchTagBar" size = "80" type="text" name="search">
+      <div id="tagSearchDiv">
+       <p><small>Right Click to learn more on each tag, Left click on any tag to add or remove it from the tags related to your meme</small></p>
+      </div>
+   </div>
+   <button onclick="uploadMan()">Upload!</button>
+   <button onclick="goToHomepage()">Back</button>
+  </div>  
+</div>
+  <!-- <div id="uploadBtn"> -->
+  <!-- </div> -->
+   <p id="errorText"></p>
+
+   <script type="text/javascript" src="../scripts/upload.js"></script>
+      <script type="text/javascript"src = "../scripts/universal.js"></script>
+   <script type="text/javascript"src = "../scripts/search.js"></script>
+</body>
+</html>
+
